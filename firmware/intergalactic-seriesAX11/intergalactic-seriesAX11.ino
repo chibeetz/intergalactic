@@ -18,78 +18,95 @@
 
 #define OLED_RESET -1        // Reset pin # (or -1 if sharing Arduino reset pin)
 #define SCREEN_ADDRESS 0x3C  ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-Adafruit_SSD1306 display2(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire1, OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire1, OLED_RESET);
+Adafruit_SSD1306 display2(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // GUItool: begin automatically generated code
-AudioInputI2S            i2s2;           //xy=74,179
-AudioInputUSB            usb2;           //xy=75,265
-AudioSynthWaveform       waveform1;      //xy=77,319
-AudioSynthWaveform       waveform2;      //xy=135,402
-AudioMixer4              mixer2;         //xy=236,306
-AudioEffectMultiply      multiply1;      //xy=378,367
-AudioAnalyzePeak         peak1;          //xy=473,233
-AudioMixer4              mixer5;         //xy=528,332
-AudioFilterBiquad        biquad2;        //xy=726,317
-AudioMixer4              mixer1;         //xy=968,344
-AudioEffectDelay         delay1;         //xy=1065,117
-AudioMixer4              mixer3;         //xy=1163,562
-AudioFilterBiquad        biquad3;        //xy=1266,72
-AudioMixer4              mixer4;         //xy=1362,350
-AudioFilterBiquad        biquad1;        //xy=1425,72
-AudioOutputUSB           usb1;           //xy=1537,291
-AudioOutputI2S           i2s1;           //xy=1538,348
-AudioConnection          patchCord1(usb2, 0, mixer2, 0);
-AudioConnection          patchCord2(usb2, 1, mixer2, 1);
-AudioConnection          patchCord3(waveform1, 0, mixer2, 2);
-AudioConnection          patchCord4(waveform2, 0, multiply1, 1);
-AudioConnection          patchCord5(mixer2, 0, multiply1, 0);
-AudioConnection          patchCord6(mixer2, 0, mixer5, 0);
-AudioConnection          patchCord7(multiply1, peak1);
-AudioConnection          patchCord8(multiply1, 0, mixer5, 1);
-AudioConnection          patchCord9(mixer5, biquad2);
-AudioConnection          patchCord10(mixer5, 0, mixer1, 2);
-AudioConnection          patchCord11(mixer5, 0, mixer1, 3);
-AudioConnection          patchCord12(biquad2, 0, mixer1, 0);
-AudioConnection          patchCord13(biquad2, 0, mixer1, 1);
-AudioConnection          patchCord14(mixer1, 0, mixer3, 0);
-AudioConnection          patchCord15(mixer1, 0, mixer4, 1);
-AudioConnection          patchCord16(delay1, 0, biquad3, 0);
-AudioConnection          patchCord17(mixer3, delay1);
-AudioConnection          patchCord18(biquad3, biquad1);
-AudioConnection          patchCord19(mixer4, 0, usb1, 0);
-AudioConnection          patchCord20(mixer4, 0, usb1, 1);
-AudioConnection          patchCord21(mixer4, 0, i2s1, 0);
-AudioConnection          patchCord22(mixer4, 0, i2s1, 1);
-AudioConnection          patchCord23(biquad1, 0, mixer3, 1);
-AudioConnection          patchCord24(biquad1, 0, mixer4, 0);
-AudioConnection          patchCord25(biquad1, 0, mixer4, 2);
-AudioControlSGTL5000     sgtl5000_1;     //xy=720,187
+AudioInputI2S            i2s2;           //xy=279,423
+AudioInputUSB            usb2;           //xy=283,449
+AudioSynthWaveform       waveform1;      //xy=395,485
+AudioMixer4              mixer6;         //xy=408,436
+AudioSynthWaveform       waveform2;      //xy=541,522
+AudioMixer4              mixer2;         //xy=546,456
+AudioEffectMultiply      multiply1;      //xy=688,517
+AudioMixer4              mixer5;         //xy=838,482
+AudioAnalyzePeak         peak1;          //xy=851,561
+AudioFilterBiquad        biquad2;        //xy=1036,467
+AudioMixer4              mixer1;         //xy=1278,494
+AudioEffectDelay         delay1;         //xy=1321,273
+AudioMixer4              mixer3;         //xy=1473,712
+AudioFilterBiquad        biquad3;        //xy=1522,228
+AudioFilterBiquad        biquad1;        //xy=1681,228
+AudioMixer4              mixer4;         //xy=1722,436
+AudioOutputUSB           usb1;           //xy=1897,377
+AudioOutputI2S           i2s1;           //xy=1898,434
+AudioConnection          patchCord1(i2s2, 0, mixer6, 0);
+AudioConnection          patchCord2(i2s2, 1, mixer6, 1);
+AudioConnection          patchCord3(usb2, 0, mixer6, 2);
+AudioConnection          patchCord4(usb2, 1, mixer6, 3);
+AudioConnection          patchCord5(waveform1, 0, mixer2, 2);
+AudioConnection          patchCord6(mixer6, 0, mixer2, 0);
+AudioConnection          patchCord7(mixer6, 0, mixer2, 1);
+AudioConnection          patchCord8(waveform2, 0, multiply1, 1);
+AudioConnection          patchCord9(mixer2, 0, multiply1, 0);
+AudioConnection          patchCord10(mixer2, 0, mixer5, 0);
+AudioConnection          patchCord11(mixer2, 0, mixer4, 3);
+AudioConnection          patchCord12(multiply1, peak1);
+AudioConnection          patchCord13(multiply1, 0, mixer5, 1);
+AudioConnection          patchCord14(mixer5, biquad2);
+AudioConnection          patchCord15(mixer5, 0, mixer1, 2);
+AudioConnection          patchCord16(mixer5, 0, mixer1, 3);
+AudioConnection          patchCord17(biquad2, 0, mixer1, 0);
+AudioConnection          patchCord18(biquad2, 0, mixer1, 1);
+AudioConnection          patchCord19(mixer1, 0, mixer3, 0);
+AudioConnection          patchCord20(mixer1, 0, mixer4, 1);
+AudioConnection          patchCord21(delay1, 0, biquad3, 0);
+AudioConnection          patchCord22(mixer3, delay1);
+AudioConnection          patchCord23(biquad3, biquad1);
+AudioConnection          patchCord24(biquad1, 0, mixer3, 1);
+AudioConnection          patchCord25(biquad1, 0, mixer4, 0);
+AudioConnection          patchCord26(biquad1, 0, mixer4, 2);
+AudioConnection          patchCord27(mixer4, 0, usb1, 0);
+AudioConnection          patchCord28(mixer4, 0, usb1, 1);
+AudioConnection          patchCord29(mixer4, 0, i2s1, 0);
+AudioConnection          patchCord30(mixer4, 0, i2s1, 1);
+AudioControlSGTL5000     sgtl5000_1;     //xy=976,343
 // GUItool: end automatically generated code
 
+/* PIN DECLARATIONS
+ * Each pin needs their own address for where they live on Teensy
+ */
+int ledPin = A8;
 
+int mixPin = A11;
+int mixVal = 0;
 
-StevesAwesomeButton button1(32, 0, INPUT_PULLUP);
-StevesAwesomeButton button2(33, 1, INPUT_PULLUP);
-StevesAwesomeButton button3(31, 2, INPUT_PULLUP);
-StevesAwesomeButton button4(34, 3, INPUT_PULLUP);
-StevesAwesomeButton button5(35, 4, INPUT_PULLUP);
+int lpfPin = A12;
+int lpf_val = 0;
 
-StevesAwesomeButton* buttons[5] = { &button1, &button2, &button3, &button4, &button5 };
+int delayPin = A13;
+int lfoVal = 0;
 
-int totalButtons = 5;
+int wav2Pin = A16;
+int ringModcarrier = 0;
 
 int wav1Pin = A17;
 int ringModwav1 = 0;
 
-int wav2Pin = A12;
-int ringModcarrier = 0;
+/* BUTTON DECLARATIONS
+ * Location and description of every button used
+ */
+StevesAwesomeButton button1(30, 0, INPUT_PULLUP); // Toggle Low-pass filter
+StevesAwesomeButton button2(31, 1, INPUT_PULLUP); // Toggle delay
+StevesAwesomeButton button3(32, 2, INPUT_PULLUP); // Toggle bypass
+StevesAwesomeButton button4(33, 3, INPUT_PULLUP); // Toggle waveform 2
+StevesAwesomeButton button5(34, 4, INPUT_PULLUP); // Toggle waveform 1
+StevesAwesomeButton button6(35, 5, INPUT_PULLUP); // Toggle user input
 
-int lpfPin = A16;
-int lpf_val = 0;
 
-int lfoPin = A13;
-int lfoVal = 0;
+StevesAwesomeButton* buttons[6] = { &button1, &button2, &button3, &button4, &button5, &button6 };
+
+int totalButtons = 6;
 
 int potControl[2] = { wav2Pin, wav1Pin };
 
@@ -98,6 +115,8 @@ bool userIN = false;
 bool delayON = false;
 bool changeWAV1 = false;
 bool changeWAV2 = false;
+bool bypassON = false;
+bool ledON = false;
 
 short waveforms1[] = {
   WAVEFORM_SINE,
@@ -181,6 +200,7 @@ void setup() {
   Serial.print("Initial Carrier: ");
   Serial.println(waveformNames2[currentIdx_w2]);
 
+
   mixer1.gain(0, 0.0);
   mixer1.gain(1, 0.0);
   mixer1.gain(2, 1.0);
@@ -201,6 +221,11 @@ void setup() {
   mixer5.gain(0, 0.3);
   mixer5.gain(1, 0.7);
 
+  mixer6.gain(0, 0.5);
+  mixer6.gain(1, 0.5);
+  mixer6.gain(2, 0.5);
+  mixer6.gain(3, 0.5);
+
 
 
   delay1.delay(0, BASE_DELAY_MS);
@@ -208,6 +233,7 @@ void setup() {
   // display2.setRotation(0);
   // display2.clearDisplay();
   // display2.display();
+  pinMode(ledPin, OUTPUT);
 
   updateDisplay();
   updateDisplay_pic();
@@ -242,6 +268,9 @@ void loop() {
   dynamicCutoff = constrain(dynamicCutoff, 300.0, 4500.0);
   biquad2.setLowpass(0, dynamicCutoff, 0.707);
   delay(10);
+  // Serial.println(dynamicCutoff);
+
+
 
 
   ringModcarrier = analogRead(wav2Pin);
@@ -249,6 +278,7 @@ void loop() {
   // waveform2.frequency(freq);
   waveform2.frequency(freq);
   delay(10);
+  //Serial.println(freq);
 
   // bitcrusher1.sampleRate(16000);
   ringModwav1 = analogRead(wav1Pin);
@@ -257,9 +287,13 @@ void loop() {
   // Serial.println(ringModwav1);
   // bitcrusher1.bits(ringModwav1);
   delay(20);
+  
+  //Serial.println(freq1);
 
   lpf_val = analogRead(lpfPin);
   float dw_val = map(lpf_val, 0, 1023, 0, 2);
+
+
 
   // mixer5.gain(0, dw_val);
   // mixer5.gain(1, dw_val);
@@ -271,7 +305,7 @@ void loop() {
 }
 
 void processGravityDrift(float peak1, int lfoVal) {
-  lfoVal = analogRead(lfoPin);
+  lfoVal = analogRead(delayPin);
 
   float lfoRateHz = map(lfoVal, 0, 1023, 1, 15) / 10.0;  // 0.1 Hz to 1.5 Hz
   float modDepthMs = map(lfoVal, 0, 1023, 0, 15) / 10.0;  // 0.0 ms to 1.5 ms
@@ -291,20 +325,22 @@ void processGravityDrift(float peak1, int lfoVal) {
 
   delay1.delay(0, smoothedDelayMs);
 
-  Serial.print("Target Delay: ");
-  Serial.print(targetDelayMs);
-  Serial.print(" ms | Smoothed Delay: ");
-  Serial.print(smoothedDelayMs);
-  Serial.print(" ms | LFO Rate: ");
-  Serial.print(lfoRateHz);
-  Serial.println(" Hz");
+
+
+  // Serial.print("Target Delay: ");
+  // Serial.print(targetDelayMs);
+  // Serial.print(" ms | Smoothed Delay: ");
+  // Serial.print(smoothedDelayMs);
+  // Serial.print(" ms | LFO Rate: ");
+  // Serial.print(lfoRateHz);
+  // Serial.println(" Hz");
 
   delay(10); 
 }
 
 void onButtonPress(int _buttonNum) {
 
-  if (_buttonNum == 1) {
+  if (_buttonNum == 0) {
     lpfON = !lpfON;
     if (lpfON == true) {
       Serial.println("LPF on");
@@ -322,27 +358,31 @@ void onButtonPress(int _buttonNum) {
     }
   }
 
-  if (_buttonNum == 0) {
+  if (_buttonNum == 5) {
     userIN = !userIN;
+    ledON = !ledON;
     if (userIN == true) {
       Serial.println("user input on");
       mixer2.gain(0, 0.5);  // turn user input channel on
       mixer2.gain(1, 0.5);  // turn user input channel on
       mixer2.gain(2, 0.0);  // turn osclliator channel off
-      // mixer5.gain(0, mixer5_val);
-      // mixer5.gain(1, mixer5_val);
-      // mixer5.gain(2, 1 - mixer5_val);
-      // mixer5.gain(3, 1 - mixer5_val);
 
     } else if (userIN == false) {
       Serial.println("user input off");
       mixer2.gain(0, 0.0);  // turn user input channel off
       mixer2.gain(1, 0.0);  // turn user input channel off
-      mixer2.gain(2, 1.0);  // turn osclliator channel on
+      mixer2.gain(2, 0.7);  // turn osclliator channel on
+    }
+    if(ledON == true) {
+      Serial.println("led on");
+      digitalWrite(ledPin, HIGH);
+    } else {
+      Serial.println("led off");
+      digitalWrite(ledPin, LOW);
     }
   }
 
-  if (_buttonNum == 2) {
+  if (_buttonNum == 4) {
     changeWAV1 = !changeWAV1;
     if (changeWAV1 == true) {
       currentIdx_w1 = (currentIdx_w1 + 1) % NUM_WAVEFORMS1;  // Cycle index
@@ -356,6 +396,7 @@ void onButtonPress(int _buttonNum) {
       Serial.println(waveformNames1[currentIdx_w1]);
       waveform1.begin(waveforms1[currentIdx_w1]);
     }
+    updateDisplay();
   }
 
   if (_buttonNum == 3) {
@@ -377,13 +418,12 @@ void onButtonPress(int _buttonNum) {
         // Cycle index
       waveform2.begin(waveforms2[currentIdx_w2]);
     }
-    updateDisplay();
     updateDisplay_pic();
 
 
   }
 
-  if (_buttonNum == 4) {
+  if (_buttonNum == 1) {
     delayON = !delayON;
     if (delayON == true) {
       Serial.println("delay on");
@@ -405,6 +445,23 @@ void onButtonPress(int _buttonNum) {
       // mixer4.gain(3, 1.0);  // turn feedback channel on
     }
   }
+
+  if (_buttonNum == 2) {
+    bypassON = !bypassON;
+    if (bypassON == true) {
+      Serial.println("bypass on");
+      mixer4.gain(0, 0);
+      mixer4.gain(1, 0);
+      mixer4.gain(2, 0);
+      mixer4.gain(3, 1);
+    } else if (bypassON == false) {
+      Serial.println("bypass off");
+      mixer4.gain(0, 0);
+      mixer4.gain(1, 1.0);
+      mixer4.gain(2, 0);
+      mixer4.gain(3, 0);      
+    }
+  }
 }
 
 // void mixer5_update(){
@@ -417,22 +474,22 @@ void updateDisplay(){
     display.setTextColor(WHITE);
     display.setCursor(25, 10);
     // display.println(currentIdx_w2);
-    if(currentIdx_w2 == 0) {
+    if(currentIdx_w1 == 0) {
       display.println("SINE");
     } 
-    if(currentIdx_w2 == 1) {
+    if(currentIdx_w1 == 1) {
       display.println("TRIANGLE");
     }
-    if(currentIdx_w2 == 2) {
+    if(currentIdx_w1 == 2) {
       display.println("SAWTOOTH");
     }
-    if(currentIdx_w2 == 3) {
+    if(currentIdx_w1 == 3) {
       display.println("SQUARE");
     }
-    if(currentIdx_w2 == 4) {
+    if(currentIdx_w1 == 4) {
       display.println("PULSE");
     } 
-    if(currentIdx_w2 == 5) {
+    if(currentIdx_w1 == 5) {
       display.println("SAMPLE HOLD");
     }               
     // display.fillRect(0, 15, 60, 40, WHITE);
