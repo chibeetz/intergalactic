@@ -5,15 +5,18 @@ Life feels so bustling these days. When's the last time you’ve looked up in th
 
 Send your sounds to space!
 
-![Intergalactic Custom PCB](/intergalatic/docs/product_photos/IAX11.jpeg)
----
+<img src="/docs/product_photos/IAX11.jpeg" alt="IAX11" width="500" />
+
+[intergalactic schematic](</docs/schematic + PCB/intergalactic schematic.pdf>)
+
+[intergalactic PCB](</docs/schematic + PCB/intergalactic PCBc.pdf>)
 
 ## Technical Specifications
 
 * **Microcontroller:** Teensy 4.1 (NXP i.MXRT1062, 32-Bit ARM Cortex-M7)
 * **Audio CODEC:** SGTL5000 Audio Shield ($24\text{-bit} / 44.1\text{ kHz}$ I2S I/O)
 * **Target Latency:** $< 1.5\text{ ms}$ (buffer size: 128 samples)
-* **Controls:** 5x Potentiometers ("Orbital Controls"), 6x Clicky Pushbuttons
+* **Components:** 6x Clicky Pushbuttons, 5x Potentiometers, 2x OLED Screens, 1x LED
 * **I/O Options:** Dual-channel 3.5mm Stereo Jack, Line Out pads, and Class-Compliant USB Audio Interface for Ableton Live / DAW integration.
 
 ---
@@ -32,5 +35,11 @@ Send your sounds to space!
 ## Audio Signal Architecture
 
 1. **Solar Flare (Ring Modulator):** Multiplies audio input with an array of carrier waveforms (Sine, Sawtooth, Triangle, Square, Pulse, Sample & Hold) switched via software-debounced hardware button.
-2. **Space Dust (Low-Pass Filter):** Dynamic high-end frequency reduction above 3500 Hz for chaotic cosmic control.
+2. **Space Dust (Low-Pass Filter):** Dynamic high-end frequency reduction above 4500 Hz for chaotic cosmic control.
 3. **Gravity Drift (Modulated Delay):** Variable read-pointer delay buffer with exponential moving average (EMA) parameter smoothing and a low-pass filtered feedback loop for analog tape warble without digital zipper noise.
+---
+## Watch and hear how it works!
+[![Static Badge](https://img.shields.io/badge/youtube%20-%20intergalactic%20walkthrough%20-%20red?labelColor=grey&color=red)](https://www.youtube.com/watch?v=_rT1fpMGm8Q)
+
+[![Static Badge](https://img.shields.io/badge/soundcloud%20-%20intergalactic%20example%20-%20rgba?labelColor=orange&color=purple)](https://soundcloud.com/chibeetz/intergalactic-baby)
+
